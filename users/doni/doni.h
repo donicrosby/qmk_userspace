@@ -17,11 +17,11 @@
 
 #include QMK_KEYBOARD_H
 #include "keychron_common.h"
-#include "text_macros/taunt_text.h"
-#include "text_macros/wide_text.h"
 
 // clang-format off
 enum {
     TAUNTTXT = NEW_SAFE_RANGE,
     WIDETXT,
 };
+
+bool process_record_doni_memes(uint16_t keycode, keyrecord_t *record);

@@ -29,15 +29,11 @@ bool process_record_taunt_text(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case TAUNTTXT:
             if (record->event.pressed) {
-                if (taunt_text_config.on) {
-                    taunt_text_config.on = false;
-                    taunt_text_config.is_a_z = false;
-                    taunt_text_config.taunt_text = false;
-                } else {
-                    taunt_text_config.on = true;
-                    taunt_text_config.is_a_z = false;
-                }
-                break;
+                taunt_text_config.on = !taunt_text_config.on;
+                taunt_text_config.is_a_z = false;
+                taunt_text_config.taunt_text = false;
+
+                return false;
             }
         case KC_A...KC_Z:
             taunt_text_config.is_a_z = true;
