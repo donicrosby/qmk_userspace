@@ -15,6 +15,7 @@
  */
 
 #include "doni.h"
+#ifdef ENABLE_TEXT_MEMES
 #include "text_macros/taunt_text.h"
 #include "text_macros/wide_text.h"
 
@@ -28,3 +29,4 @@ bool process_record_doni_memes(uint16_t keycode, keyrecord_t *record) {
 
     return true;
 }
+#endif

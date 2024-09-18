@@ -75,10 +75,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_record_keychron_common(keycode, record)) {
         return false;
     }
-
+#ifdef ENABLE_TEXT_MEMES
     if (!process_record_doni_memes(keycode, record)) {
         return false;
     }
-
+#endif
     return true;
 }

@@ -19,9 +19,13 @@
 #include "keychron_common.h"
 
 // clang-format off
+
+#ifdef ENABLE_TEXT_MEMES
 enum {
     TAUNTTXT = NEW_SAFE_RANGE,
     WIDETXT,
 };
 
+
 bool process_record_doni_memes(uint16_t keycode, keyrecord_t *record);
+#endif

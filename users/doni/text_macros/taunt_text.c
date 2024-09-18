@@ -15,6 +15,7 @@
  */
 
 #include "action.h"
+#include "modifiers.h"
 #include "quantum_keycodes.h"
 #include "taunt_text.h"
 #include "doni.h"
@@ -47,7 +48,13 @@ bool process_record_taunt_text(uint16_t keycode, keyrecord_t *record) {
             if (keycode != KC_SPACE) {
                 taunt_text_config.taunt_text = !taunt_text_config.taunt_text;
                 if (taunt_text_config.taunt_text && taunt_text_config.is_a_z) {
-                    tap_code16(S(keycode));
+                    if (get_mods() & MOD_MASK_SHIFT) {
+                        del_mods(MOD_MASK_SHIFT);
+                        tap_code16(keycode);
+                    } else {
+                        tap_code16(S(keycode));
+                    }
+
                     return false;
                 }
             }

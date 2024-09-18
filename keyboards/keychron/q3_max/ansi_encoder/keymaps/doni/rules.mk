@@ -1,1 +1,2 @@
 VIA_ENABLE = yes
+ENABLE_TEXT_MEMES = yes
